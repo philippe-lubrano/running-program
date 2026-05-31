@@ -11,47 +11,45 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .container{max-width:740px;margin:0 auto;padding:20px}
 h1{font-size:22px;font-weight:700;margin-bottom:2px}
 .main-sub{font-size:13px;color:#888780;margin-bottom:24px}
-
-/* Phase tabs */
 .phase-tabs{display:flex;gap:0;margin-bottom:20px;background:#e8e6df;border-radius:12px;padding:4px;overflow-x:auto}
-.phase-tab{flex:1;min-width:100px;padding:10px 12px;border-radius:10px;border:none;cursor:pointer;font-size:13px;font-weight:600;color:#5f5e5a;background:transparent;transition:all 0.2s;text-align:center;-webkit-tap-highlight-color:transparent}
+.phase-tab{flex:1;min-width:90px;padding:10px 10px;border-radius:10px;border:none;cursor:pointer;font-size:12px;font-weight:600;color:#5f5e5a;background:transparent;transition:all 0.2s;text-align:center;-webkit-tap-highlight-color:transparent}
 .phase-tab:hover{color:#2c2c2a}
 .phase-tab.active{background:#fff;color:#2c2c2a;box-shadow:0 1px 3px rgba(0,0,0,0.1)}
-.phase-tab .tab-emoji{display:block;font-size:18px;margin-bottom:2px}
-
-/* Phase header */
+.phase-tab .tab-emoji{display:block;font-size:17px;margin-bottom:2px}
 .phase-info{background:#fff;border-radius:14px;padding:18px 20px;margin-bottom:16px;border:1px solid #e8e6df}
 .phase-title{font-size:17px;font-weight:700;margin-bottom:4px}
-.phase-meta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.phase-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
 .phase-meta span{font-size:12px;color:#888780;background:#f5f3ee;padding:3px 10px;border-radius:6px}
 .phase-desc{font-size:13px;color:#5f5e5a;line-height:1.65}
-
-/* Allure table */
-.allure-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin:12px 0 0}
+.allure-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin:12px 0 0}
 .allure-card{border-radius:10px;padding:10px 12px;text-align:center}
 .allure-label{font-size:11px;font-weight:600;margin-bottom:2px}
 .allure-val{font-size:15px;font-weight:700}
 .allure-fc{font-size:11px;margin-top:1px}
-
-/* Week nav */
+.countdown{background:linear-gradient(135deg,#0F6E56,#1D9E75);border-radius:14px;padding:16px 20px;margin-bottom:16px;color:#fff;display:flex;align-items:center;gap:16px}
+.countdown-num{font-size:36px;font-weight:800;line-height:1}
+.countdown-label{font-size:13px;opacity:0.85}
+.countdown-sub{font-size:12px;opacity:0.7;margin-top:2px}
 .week-nav{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
-.week-btn{background:#fff;border:1px solid #d3d1c7;border-radius:8px;padding:8px 14px;cursor:pointer;font-size:13px;font-weight:600;color:#5f5e5a;transition:all 0.15s;-webkit-tap-highlight-color:transparent}
+.week-btn{background:#fff;border:1px solid #d3d1c7;border-radius:8px;padding:8px 12px;cursor:pointer;font-size:12px;font-weight:600;color:#5f5e5a;transition:all 0.15s;-webkit-tap-highlight-color:transparent}
 .week-btn:hover{border-color:#888780}
 .week-btn.active{background:#0F6E56;border-color:#0F6E56;color:#fff}
-
-/* Week content */
+.week-btn.race-week{border-color:#D85A30;color:#D85A30}
+.week-btn.race-week.active{background:#D85A30;border-color:#D85A30;color:#fff}
 .week-header{display:flex;align-items:baseline;gap:10px;margin-bottom:4px;flex-wrap:wrap}
 .week-title{font-size:16px;font-weight:700}
 .week-vol{font-size:12px;color:#888780;background:#f1efe8;padding:2px 10px;border-radius:6px}
+.week-dates{font-size:12px;color:#0F6E56;background:#E1F5EE;padding:2px 10px;border-radius:6px;font-weight:600}
 .vol-track{width:100%;background:#e8e6df;border-radius:4px;height:6px;margin-bottom:10px}
 .vol-fill{height:6px;border-radius:4px;transition:width 0.4s ease}
 .vol-p1{background:linear-gradient(90deg,#5DCAA5,#1D9E75)}
 .vol-p2{background:linear-gradient(90deg,#85B7EB,#185FA5)}
-.vol-p3{background:linear-gradient(90deg,#F0997B,#D85A30)}
-
+.vol-pgsc{background:linear-gradient(90deg,#F0997B,#D85A30)}
 .focus-box{background:#fff;border-radius:10px;padding:12px 14px;font-size:13px;color:#5f5e5a;line-height:1.6;margin-bottom:16px;border-left:3px solid #EF9F27}
+.focus-box.race{border-left-color:#D85A30}
 .section-label{font-size:11px;color:#888780;text-transform:uppercase;letter-spacing:1px;margin:0 0 8px;font-weight:600}
 .day-card{background:#fff;border-radius:10px;padding:12px 14px;margin-bottom:8px;border:1px solid #e8e6df}
+.day-card.race-day{border-color:#D85A30;border-width:2px}
 .day-head{display:flex;align-items:center;gap:8px;margin-bottom:5px}
 .day-icon{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
 .day-name{font-weight:600;font-size:13px}
@@ -59,8 +57,6 @@ h1{font-size:22px;font-weight:700;margin-bottom:2px}
 .day-detail{font-size:12.5px;color:#5f5e5a;line-height:1.65;padding-left:38px}
 .day-detail strong{color:#2c2c2a}
 .day-detail em{font-style:normal;background:#E6F1FB;color:#0C447C;padding:1px 5px;border-radius:4px;font-size:11px;white-space:nowrap}
-
-.i-tennis .day-icon{background:#FAEEDA;color:#854F0B}
 .i-rest .day-icon{background:#F1EFE8;color:#5f5e5a}
 .i-z2 .day-icon{background:#E1F5EE;color:#0F6E56}
 .i-z1 .day-icon{background:#E6F1FB;color:#185FA5}
@@ -69,8 +65,8 @@ h1{font-size:22px;font-weight:700;margin-bottom:2px}
 .i-frac .day-icon{background:#FCEBEB;color:#A32D2D}
 .i-tempo .day-icon{background:#FBEAF0;color:#993556}
 .i-long .day-icon{background:#E1F5EE;color:#085041}
-
-.i-tennis .badge{background:#FAEEDA;color:#633806}
+.i-fartlek .day-icon{background:#FFF3CD;color:#856404}
+.i-race .day-icon{background:#D85A30;color:#fff}
 .i-rest .badge{background:#F1EFE8;color:#444441}
 .i-z2 .badge{background:#E1F5EE;color:#085041}
 .i-z1 .badge{background:#E6F1FB;color:#0C447C}
@@ -79,310 +75,297 @@ h1{font-size:22px;font-weight:700;margin-bottom:2px}
 .i-frac .badge{background:#FCEBEB;color:#791F1F}
 .i-tempo .badge{background:#FBEAF0;color:#72243E}
 .i-long .badge{background:#E1F5EE;color:#085041}
-
+.i-fartlek .badge{background:#FFF3CD;color:#856404}
+.i-race .badge{background:#D85A30;color:#fff}
 .garmin-section{background:#fff;border-radius:12px;padding:14px 16px;margin-top:20px;border:1px solid #e8e6df}
 .garmin-title{font-size:13px;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:6px}
 .garmin-title i{color:#0F6E56}
 .garmin-list{font-size:12px;color:#5f5e5a;line-height:1.9;list-style:none;padding:0}
-.garmin-list li{padding-left:8px}
 .workout-name{background:#E1F5EE;color:#0F6E56;padding:1px 6px;border-radius:4px;font-size:11px;font-weight:600}
-
-@media(max-width:500px){
-  .phase-tab{font-size:12px;padding:8px 6px;min-width:80px}
-  .allure-grid{grid-template-columns:repeat(2,1fr)}
-}
+@media(max-width:500px){.allure-grid{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
 <div class="container">
-
-<h1>Programme Complet — Reprise Course à Pied</h1>
-<div class="main-sub">De la reprise au marathon · Adapté à ta Garmin Forerunner 255</div>
-
+<h1>Programme Complet — Course à Pied</h1>
+<div class="main-sub">Reprise → GSC Run Set & Match 10K (5 juillet) → Semi → Marathon</div>
 <div class="phase-tabs" id="phaseTabs"></div>
 <div id="phaseInfo"></div>
+<div id="countdown"></div>
 <div class="week-nav" id="weekNav"></div>
 <div id="weekContent"></div>
 <div id="garminSection"></div>
-
 </div>
 
 <script>
 const PHASES = [
+  // ── PHASE 1 ──
   {
     id:"p1", label:"Phase 1", emoji:"🌱", name:"Reprise",
-    duration:"6 semaines", volume:"15→28 km/sem", sessions:"3→4/sem",
-    desc:"Reconstruire la base aérobie, réhabituer tendons et articulations au choc de la course. 80% du temps en zone 2 (endurance fondamentale). Pas de fractionné.",
+    duration:"6 semaines", volume:"18→32 km/sem", sessions:"4/sem", countdown:false,
+    desc:"Reconstruire la base aérobie, réhabituer tendons et articulations. 80% du temps en zone 2. Pas de fractionné. 4 séances par semaine dès le départ.",
     allures:[
       {label:"Endurance Z2",val:"5:40–6:10/km",fc:"120–140 bpm",bg:"#E1F5EE",color:"#085041"},
-      {label:"Footing léger Z1",val:"6:00–6:30/km",fc:"<120 bpm",bg:"#E6F1FB",color:"#0C447C"},
+      {label:"Footing léger Z1",val:"6:00–6:30/km",fc:"< 120 bpm",bg:"#E6F1FB",color:"#0C447C"},
       {label:"Accélérations Z4",val:"~4:30/km",fc:"155–170 bpm",bg:"#FAECE7",color:"#712B13"},
     ],
-    garmin:[
-      "P1 - Footing Z2 25min — S1-3 mercredi",
-      "P1 - Footing Z2 30min — S1-3 vendredi, S3 mercredi",
-      "P1 - Sortie Longue Z2 40min — S1-3 samedi",
-      "P1 - Footing Z2 + 5 Accélérations — S4-6 mercredi",
-      "P1 - Footing Léger Z1-Z2 25min — S4-6 jeudi",
-      "P1 - Footing Z2 35min — S4-6 vendredi",
-      "P1 - Sortie Longue Z2 50min — S4-6 samedi",
-    ],
+    garmin:["P1 - Footing Z2 25min","P1 - Footing Z2 30min","P1 - Sortie Longue Z2 40min","P1 - Footing Z2 + 5 Accélérations","P1 - Footing Léger Z1-Z2 25min","P1 - Footing Z2 35min","P1 - Sortie Longue Z2 50min"],
     weeks:[
-      {label:"Semaine 1",vol:"~15 km",volPct:25,focus:"Première semaine, objectif : juste reprendre le rythme sans forcer. Body Battery basse, écoute ton corps. Pas d'objectif d'allure, juste courir en aisance.",days:[
-        {day:"Lundi",type:"tennis",icon:"fa-solid fa-table-tennis-paddle-ball",badge:"Tennis",detail:"20h–22h. Compte dans la charge d'entraînement. Bien s'hydrater après."},
-        {day:"Mardi",type:"rest",icon:"fa-solid fa-bed",badge:"Repos",detail:"Récupération complète post-tennis. Étirements doux 10 min si envie."},
-        {day:"Mercredi",type:"z2",icon:"fa-solid fa-person-running",badge:"Footing Z2",detail:"<strong>25 min</strong> à 5:50–6:10/km. FC 120–140 bpm. Si FC > 140, ralentis ou marche 1 min. <em>P1 - Footing Z2 25min</em>"},
+      {label:"Semaine 1",dates:"",vol:"~18 km",volPct:25,focus:"Première semaine, objectif : juste reprendre le rythme. Body Battery basse, écoute ton corps. Lundi = premier footing de reprise.",days:[
+        {day:"Lundi",type:"z2",icon:"fa-solid fa-person-running",badge:"Footing Z2",detail:"<strong>25 min</strong> à 5:50–6:10/km. FC 120–140 bpm. <em>P1 - Footing Z2 25min</em>"},
+        {day:"Mardi",type:"rest",icon:"fa-solid fa-bed",badge:"Repos",detail:"Récupération complète. Étirements doux, hydratation."},
+        {day:"Mercredi",type:"z2",icon:"fa-solid fa-person-running",badge:"Footing Z2",detail:"<strong>25 min</strong> à 5:50–6:10/km. FC 120–140 bpm. <em>P1 - Footing Z2 25min</em>"},
         {day:"Jeudi",type:"rest",icon:"fa-solid fa-bed",badge:"Repos",detail:"Repos ou marche douce 20 min."},
-        {day:"Vendredi",type:"z2",icon:"fa-solid fa-person-running",badge:"Footing Z2",detail:"<strong>30 min</strong> à 5:50–6:10/km. Zone 2. Patience, pas d'accélération. <em>P1 - Footing Z2 30min</em>"},
-        {day:"Samedi",type:"long",icon:"fa-solid fa-person-running",badge:"Sortie longue Z2",detail:"<strong>35–40 min</strong> à 6:00–6:20/km. Très facile, tu dois pouvoir parler. <em>P1 - Sortie Longue Z2 40min</em>"},
-        {day:"Dimanche",type:"rest",icon:"fa-solid fa-bed",badge:"Repos",detail:"Repos. Option : 15 min gainage (planche, squats, fentes, mollets)."}
+        {day:"Vendredi",type:"z2",icon:"fa-solid fa-person-running",badge:"Footing Z2",detail:"<strong>30 min</strong> à 5:50–6:10/km. <em>P1 - Footing Z2 30min</em>"},
+        {day:"Samedi",type:"long",icon:"fa-solid fa-road",badge:"Sortie longue Z2",detail:"<strong>35–40 min</strong> à 6:00–6:20/km. Très facile. <em>P1 - Sortie Longue Z2 40min</em>"},
+        {day:"Dimanche",type:"rest",icon:"fa-solid fa-bed",badge:"Repos",detail:"Repos. Option : 15 min gainage."}
       ]},
-      {label:"Semaine 2",vol:"~17 km",volPct:33,focus:"Même schéma. L'enjeu c'est la régularité, pas l'intensité. Les jambes devraient être un peu plus à l'aise.",days:[
-        {day:"Lundi",type:"tennis",icon:"fa-solid fa-table-tennis-paddle-ball",badge:"Tennis",detail:"20h–22h."},
-        {day:"Mardi",type:"rest",icon:"fa-solid fa-bed",badge:"Repos",detail:"Récupération. Rouleau de massage sur les mollets si tensions."},
-        {day:"Mercredi",type:"z2",icon:"fa-solid fa-person-running",badge:"Footing Z2",detail:"<strong>25 min</strong> Z2. Compare tes sensations avec S1 — la FC devrait être un peu plus basse à même allure."},
-        {day:"Jeudi",type:"rest",icon:"fa-solid fa-bed",badge:"Repos / Marche",detail:"Marche active 30 min ou repos. Écoute les tibias et mollets."},
-        {day:"Vendredi",type:"z2",icon:"fa-solid fa-person-running",badge:"Footing Z2",detail:"<strong>30 min</strong> Z2. Varie le parcours pour varier les appuis."},
-        {day:"Samedi",type:"long",icon:"fa-solid fa-person-running",badge:"Sortie longue Z2",detail:"<strong>40 min</strong> en aisance totale. Max 43 min si tu te sens bien."},
-        {day:"Dimanche",type:"renfo",icon:"fa-solid fa-dumbbell",badge:"Renforcement",detail:"15 min : 3×30s planche + 3×30s planche latérale + 3×12 squats + 3×10 fentes + 2×15 mollets."}
+      {label:"Semaine 2",dates:"",vol:"~20 km",volPct:32,focus:"Même schéma. Régularité, pas intensité. La FC devrait commencer à se calmer à même allure.",days:[
+        {day:"Lundi",type:"z2",icon:"fa-solid fa-person-running",badge:"Footing Z2",detail:"<strong>25 min</strong> Z2. Compare la FC avec S1. <em>P1 - Footing Z2 25min</em>"},
+        {day:"Mardi",type:"rest",icon:"fa-solid fa-bed",badge:"Repos",detail:"Récup. Rouleau sur mollets si tensions."},
+        {day:"Mercredi",type:"z2",icon:"fa-solid fa-person-running",badge:"Footing Z2",detail:"<strong>25 min</strong> Z2. Varie le parcours."},
+        {day:"Jeudi",type:"rest",icon:"fa-solid fa-bed",badge:"Repos / Marche",detail:"Marche active 30 min ou repos."},
+        {day:"Vendredi",type:"z2",icon:"fa-solid fa-person-running",badge:"Footing Z2",detail:"<strong>30 min</strong> Z2. <em>P1 - Footing Z2 30min</em>"},
+        {day:"Samedi",type:"long",icon:"fa-solid fa-road",badge:"Sortie longue Z2",detail:"<strong>40 min</strong> en aisance totale."},
+        {day:"Dimanche",type:"renfo",icon:"fa-solid fa-dumbbell",badge:"Renforcement",detail:"15 min : 3×30s planche + 3×12 squats + 3×10 fentes + 2×15 mollets."}
       ]},
-      {label:"Semaine 3",vol:"~20 km",volPct:40,focus:"Consolidation, on monte légèrement le volume mercredi. Douleurs articulaires ? On réduit la sortie longue de 5 min.",days:[
-        {day:"Lundi",type:"tennis",icon:"fa-solid fa-table-tennis-paddle-ball",badge:"Tennis",detail:"20h–22h."},
+      {label:"Semaine 3",dates:"",vol:"~23 km",volPct:40,focus:"Consolidation. On monte le volume progressivement. Douleurs articulaires → réduire la sortie longue de 5 min.",days:[
+        {day:"Lundi",type:"z2",icon:"fa-solid fa-person-running",badge:"Footing Z2",detail:"<strong>30 min</strong> Z2. <em>P1 - Footing Z2 30min</em>"},
         {day:"Mardi",type:"rest",icon:"fa-solid fa-bed",badge:"Repos",detail:"Repos complet."},
-        {day:"Mercredi",type:"z2",icon:"fa-solid fa-person-running",badge:"Footing Z2",detail:"<strong>30 min</strong> Z2 (on monte de 25 à 30 min). <em>P1 - Footing Z2 30min</em>"},
-        {day:"Jeudi",type:"z1",icon:"fa-solid fa-person-walking",badge:"Marche active",detail:"30–40 min marche rapide. Volume cardio sans impact."},
+        {day:"Mercredi",type:"z2",icon:"fa-solid fa-person-running",badge:"Footing Z2",detail:"<strong>30 min</strong> Z2. <em>P1 - Footing Z2 30min</em>"},
+        {day:"Jeudi",type:"z1",icon:"fa-solid fa-person-walking",badge:"Marche active",detail:"30–40 min marche rapide."},
         {day:"Vendredi",type:"z2",icon:"fa-solid fa-person-running",badge:"Footing Z2",detail:"<strong>30 min</strong> Z2."},
-        {day:"Samedi",type:"long",icon:"fa-solid fa-person-running",badge:"Sortie longue Z2",detail:"<strong>40–45 min</strong> très facile. ~7 km."},
-        {day:"Dimanche",type:"renfo",icon:"fa-solid fa-dumbbell",badge:"Renforcement",detail:"15 min renfo. Ajoute : 2×30s chaise + 2×10 pont fessier."}
+        {day:"Samedi",type:"long",icon:"fa-solid fa-road",badge:"Sortie longue Z2",detail:"<strong>40–45 min</strong> très facile. ~7 km."},
+        {day:"Dimanche",type:"renfo",icon:"fa-solid fa-dumbbell",badge:"Renforcement",detail:"15 min renfo. + 2×30s chaise + 2×10 pont fessier."}
       ]},
-      {label:"Semaine 4",vol:"~24 km",volPct:55,focus:"2ème moitié : intro des accélérations progressives (pas du fractionné) pour réveiller les fibres rapides. 4ème sortie le jeudi.",days:[
-        {day:"Lundi",type:"tennis",icon:"fa-solid fa-table-tennis-paddle-ball",badge:"Tennis",detail:"20h–22h."},
-        {day:"Mardi",type:"rest",icon:"fa-solid fa-bed",badge:"Repos",detail:"Repos. Étirements 10 min."},
-        {day:"Mercredi",type:"accel",icon:"fa-solid fa-bolt",badge:"Footing + Accélérations",detail:"<strong>30 min</strong> : 10 min Z2 + <strong>5×20s</strong> accélération progressive (Z4, pas sprint) + 1min30 récup + 15 min Z2. <em>P1 - Footing Z2 + 5 Accélérations</em>"},
-        {day:"Jeudi",type:"z1",icon:"fa-solid fa-person-running",badge:"Footing léger",detail:"<strong>25 min</strong> très tranquille (6:00–6:30/km). Récupération active. <em>P1 - Footing Léger Z1-Z2 25min</em>"},
-        {day:"Vendredi",type:"z2",icon:"fa-solid fa-person-running",badge:"Footing Z2",detail:"<strong>35 min</strong> Z2 (5:40–6:00/km). <em>P1 - Footing Z2 35min</em>"},
-        {day:"Samedi",type:"long",icon:"fa-solid fa-person-running",badge:"Sortie longue Z2",detail:"<strong>45–50 min</strong> très facile. ~8 km. <em>P1 - Sortie Longue Z2 50min</em>"},
-        {day:"Dimanche",type:"renfo",icon:"fa-solid fa-dumbbell",badge:"Renforcement",detail:"15 min renfo. Progresse : planche 3×40s, squats 3×15, fentes 3×12/jambe."}
-      ]},
-      {label:"Semaine 5",vol:"~27 km",volPct:70,focus:"Même structure que S4, un poil plus de volume. L'allure Z2 devient naturelle, la FC se calme. Note ton allure à 135 bpm = marqueur de progression.",days:[
-        {day:"Lundi",type:"tennis",icon:"fa-solid fa-table-tennis-paddle-ball",badge:"Tennis",detail:"20h–22h."},
+      {label:"Semaine 4",dates:"",vol:"~27 km",volPct:50,focus:"Intro accélérations progressives lundi, footing léger jeudi. 4 séances de course.",days:[
+        {day:"Lundi",type:"accel",icon:"fa-solid fa-bolt",badge:"Footing + Accélérations",detail:"10 min Z2 + <strong>5×20s</strong> accélération Z4 + 1min30 récup + 15 min Z2. <em>P1 - Footing Z2 + 5 Accélérations</em>"},
         {day:"Mardi",type:"rest",icon:"fa-solid fa-bed",badge:"Repos",detail:"Repos."},
-        {day:"Mercredi",type:"accel",icon:"fa-solid fa-bolt",badge:"Footing + 6 Accélérations",detail:"<strong>35 min</strong> : 10 min Z2 + <strong>6×20s</strong> accélération + 1min30 récup + 15 min Z2."},
-        {day:"Jeudi",type:"z1",icon:"fa-solid fa-person-running",badge:"Footing léger",detail:"<strong>25 min</strong> récup active Z1-Z2."},
+        {day:"Mercredi",type:"z2",icon:"fa-solid fa-person-running",badge:"Footing Z2",detail:"<strong>30 min</strong> Z2. <em>P1 - Footing Z2 30min</em>"},
+        {day:"Jeudi",type:"z1",icon:"fa-solid fa-person-running",badge:"Footing léger",detail:"<strong>25 min</strong> récup active (6:00–6:30/km). <em>P1 - Footing Léger Z1-Z2 25min</em>"},
+        {day:"Vendredi",type:"z2",icon:"fa-solid fa-person-running",badge:"Footing Z2",detail:"<strong>35 min</strong> Z2. <em>P1 - Footing Z2 35min</em>"},
+        {day:"Samedi",type:"long",icon:"fa-solid fa-road",badge:"Sortie longue Z2",detail:"<strong>45–50 min</strong> très facile. ~8 km. <em>P1 - Sortie Longue Z2 50min</em>"},
+        {day:"Dimanche",type:"renfo",icon:"fa-solid fa-dumbbell",badge:"Renforcement",detail:"15 min renfo progressif."}
+      ]},
+      {label:"Semaine 5",dates:"",vol:"~30 km",volPct:60,focus:"L'allure Z2 devient naturelle. Note ton allure à 135 bpm = indicateur de progression semaine après semaine.",days:[
+        {day:"Lundi",type:"accel",icon:"fa-solid fa-bolt",badge:"Footing + 6 Accélérations",detail:"10 min Z2 + <strong>6×20s</strong> accélération Z4 + 1min30 récup + 15 min Z2. <em>P1 - Footing Z2 + 5 Accélérations</em>"},
+        {day:"Mardi",type:"rest",icon:"fa-solid fa-bed",badge:"Repos",detail:"Repos."},
+        {day:"Mercredi",type:"z2",icon:"fa-solid fa-person-running",badge:"Footing Z2",detail:"<strong>35 min</strong> Z2. <em>P1 - Footing Z2 35min</em>"},
+        {day:"Jeudi",type:"z1",icon:"fa-solid fa-person-running",badge:"Footing léger",detail:"<strong>25 min</strong> récup active Z1-Z2. <em>P1 - Footing Léger Z1-Z2 25min</em>"},
         {day:"Vendredi",type:"z2",icon:"fa-solid fa-person-running",badge:"Footing Z2",detail:"<strong>35 min</strong> Z2."},
-        {day:"Samedi",type:"long",icon:"fa-solid fa-person-running",badge:"Sortie longue Z2",detail:"<strong>50–55 min</strong>. ~9 km. Toujours en aisance."},
+        {day:"Samedi",type:"long",icon:"fa-solid fa-road",badge:"Sortie longue Z2",detail:"<strong>50–55 min</strong>. ~9 km."},
         {day:"Dimanche",type:"renfo",icon:"fa-solid fa-dumbbell",badge:"Renforcement",detail:"15 min renfo + 5 min étirements."}
       ]},
-      {label:"Semaine 6",vol:"~28 km",volPct:80,focus:"Dernière semaine Phase 1. Consolidation + mini test samedi (5 dernières min à allure libre) pour jauger ton niveau avant Phase 2.",days:[
-        {day:"Lundi",type:"tennis",icon:"fa-solid fa-table-tennis-paddle-ball",badge:"Tennis",detail:"20h–22h."},
+      {label:"Semaine 6",dates:"",vol:"~32 km",volPct:68,focus:"Dernière semaine Phase 1. Mini test samedi (5 dernières min à allure libre) avant de basculer sur le plan GSC.",days:[
+        {day:"Lundi",type:"accel",icon:"fa-solid fa-bolt",badge:"Footing + Accélérations",detail:"10 min Z2 + 6×20s accélération + 1min30 récup + 15 min Z2. <em>P1 - Footing Z2 + 5 Accélérations</em>"},
         {day:"Mardi",type:"rest",icon:"fa-solid fa-bed",badge:"Repos",detail:"Repos."},
-        {day:"Mercredi",type:"accel",icon:"fa-solid fa-bolt",badge:"Footing + Accélérations",detail:"<strong>35 min</strong> : 10 min Z2 + 6×20s accélération + 1min30 récup + 15 min Z2."},
-        {day:"Jeudi",type:"z1",icon:"fa-solid fa-person-running",badge:"Footing léger",detail:"<strong>25 min</strong> récup active."},
+        {day:"Mercredi",type:"z2",icon:"fa-solid fa-person-running",badge:"Footing Z2",detail:"<strong>35 min</strong> Z2. <em>P1 - Footing Z2 35min</em>"},
+        {day:"Jeudi",type:"z1",icon:"fa-solid fa-person-running",badge:"Footing léger",detail:"<strong>25 min</strong> récup active. <em>P1 - Footing Léger Z1-Z2 25min</em>"},
         {day:"Vendredi",type:"z2",icon:"fa-solid fa-person-running",badge:"Footing Z2",detail:"<strong>35 min</strong> Z2."},
-        {day:"Samedi",type:"long",icon:"fa-solid fa-person-running",badge:"SL + Test",detail:"<strong>55 min</strong> dont 5 dernières minutes à allure libre. Note allure + FC = ton point de départ Phase 2."},
-        {day:"Dimanche",type:"renfo",icon:"fa-solid fa-dumbbell",badge:"Bilan",detail:"15 min renfo. Compare FC repos, allure à FC 135, sensations vs S1."}
+        {day:"Samedi",type:"long",icon:"fa-solid fa-road",badge:"SL + Test",detail:"<strong>55 min</strong> dont 5 dernières min à allure libre. Note allure + FC."},
+        {day:"Dimanche",type:"renfo",icon:"fa-solid fa-dumbbell",badge:"Bilan",detail:"15 min renfo. Compare FC repos et allure à FC 135 vs S1."}
       ]}
     ]
   },
+  // ── PLAN GSC 10K ──
+  {
+    id:"gsc", label:"GSC 10K", emoji:"🏁", name:"GSC Run 5 juillet",
+    duration:"5 semaines", volume:"35→45 km/sem", sessions:"5/sem", countdown:true,
+    desc:"Plan hybride accéléré spécifiquement conçu pour le GSC Run Set & Match du 5 juillet. Objectif : passer sous les 50 min. Fractionné dès la S2, tempo progressif, affûtage S5.",
+    allures:[
+      {label:"Endurance Z2",val:"5:40–6:05/km",fc:"120–140 bpm",bg:"#E1F5EE",color:"#085041"},
+      {label:"Tempo / Z3",val:"5:00–5:15/km",fc:"140–158 bpm",bg:"#FBEAF0",color:"#993556"},
+      {label:"Allure 10K / Z4",val:"4:50–5:05/km",fc:"158–172 bpm",bg:"#FCEBEB",color:"#791F1F"},
+      {label:"Fartlek Z3",val:"5:05–5:20/km",fc:"145–158 bpm",bg:"#FFF3CD",color:"#856404"},
+    ],
+    garmin:[
+      "GSC S1 - Lundi Footing Z2 30min","GSC S1 - Mardi Fartlek 30min","GSC S1 - Jeudi Footing Z2 35min",
+      "GSC S1 - Vendredi Footing + Accélérations","GSC S1 - Samedi Sortie Longue Z2 55min",
+      "GSC S2 - Mardi Fractionné 6×400m","GSC S2 - Vendredi Tempo 20min","GSC S2 - Samedi Sortie Longue Z2 55min",
+      "GSC S3 - Mardi Fractionné 8×400m","GSC S3 - Vendredi Tempo 25min","GSC S3 - Samedi Sortie Longue Z2 1h",
+      "GSC S4 - Mardi Fractionné 5×1000m","GSC S4 - Vendredi Tempo 30min","GSC S4 - Samedi Sortie Longue 50min",
+      "GSC S5 - Lundi Footing Léger 25min","GSC S5 - Mardi Fractionné Léger 4×400m","GSC S5 - Jeudi Footing Léger 20min",
+      "GSC S5 - COURSE 10KM GSC Run Set & Match"
+    ],
+    weeks:[
+      {label:"S1 — Transition",dates:"2–8 juin",vol:"~37 km",volPct:57,isRace:false,
+       focus:"Lundi libéré : on démarre directement par un fartlek pour réveiller les jambes en douceur. Pas encore de vrai fractionné. Renforcement musculaire dimanche. 5 séances de course cette semaine.",
+       days:[
+        {day:"Lundi",type:"fartlek",icon:"fa-solid fa-shuffle",badge:"Fartlek",detail:"<strong>30 min</strong> : 10 min Z2 + <strong>6×(1min Z3 / 2min Z2)</strong> + 5 min retour calme. Introduction en douceur de l'intensité. <em>GSC S1 - Mardi Fartlek 30min</em>"},
+        {day:"Mardi",type:"rest",icon:"fa-solid fa-bed",badge:"Repos",detail:"Récupération active. Étirements, hydratation. Marche 20 min OK."},
+        {day:"Mercredi",type:"z2",icon:"fa-solid fa-person-running",badge:"Footing Z2",detail:"<strong>35 min</strong> Z2 (5:45–6:05/km). <em>GSC S1 - Jeudi Footing Z2 35min</em>"},
+        {day:"Jeudi",type:"accel",icon:"fa-solid fa-bolt",badge:"Footing + Accélérations",detail:"10 min Z2 + <strong>6×30s</strong> accélération Z4 + 1min30 récup + 15 min Z2. Accélérations plus longues (30s vs 20s en Phase 1). <em>GSC S1 - Vendredi Footing + Accélérations</em>"},
+        {day:"Vendredi",type:"rest",icon:"fa-solid fa-bed",badge:"Repos",detail:"Repos. Prépare la sortie longue du lendemain."},
+        {day:"Samedi",type:"long",icon:"fa-solid fa-road",badge:"Sortie longue Z2",detail:"<strong>55 min</strong> Z2 (5:50–6:15/km). Très facile, conserve de l'énergie pour la semaine 2. <em>GSC S1 - Samedi Sortie Longue Z2 55min</em>"},
+        {day:"Dimanche",type:"renfo",icon:"fa-solid fa-dumbbell",badge:"Renforcement",detail:"15 min renfo : planche 3×40s, squats 3×15, fentes 3×12/jambe, mollets 2×15. Indispensable pour protéger les tendons avant le fractionné."}
+      ]},
+      {label:"S2 — Premier fractionné",dates:"9–15 juin",vol:"~42 km",volPct:67,isRace:false,
+       focus:"La semaine clé du déclic. Premier vrai fractionné lundi. Objectif : régularité sur les 400m, pas vitesse max. Le tempo du vendredi complète l'apprentissage de l'allure cible. 5 séances de course.",
+       days:[
+        {day:"Lundi",type:"frac",icon:"fa-solid fa-bolt-lightning",badge:"Fractionné 6×400m",detail:"15 min Z2 + <strong>6×400m à 4:50–5:05/km</strong> (Z4) + 90s récup trot + 10 min retour calme. Régularité > vitesse. <em>GSC S2 - Mardi Fractionné 6×400m</em>"},
+        {day:"Mardi",type:"rest",icon:"fa-solid fa-bed",badge:"Repos",detail:"Repos obligatoire post-fractionné. Jambes légères, marche OK."},
+        {day:"Mercredi",type:"z1",icon:"fa-solid fa-person-running",badge:"Footing récup",detail:"<strong>30 min</strong> très léger Z1-Z2 (6:00–6:30/km). Récupération active. <em>GSC S2 - Jeudi Footing Récup 30min</em>"},
+        {day:"Jeudi",type:"tempo",icon:"fa-solid fa-gauge-high",badge:"Tempo 20min",detail:"15 min Z2 + <strong>20 min à 5:05–5:15/km</strong> + 10 min Z2. Tes jambes découvrent l'allure cible. <em>GSC S2 - Vendredi Tempo 20min</em>"},
+        {day:"Vendredi",type:"rest",icon:"fa-solid fa-bed",badge:"Repos",detail:"Repos. Prépare la sortie longue du samedi."},
+        {day:"Samedi",type:"long",icon:"fa-solid fa-road",badge:"Sortie longue Z2",detail:"<strong>55 min</strong> Z2 très facile. Consolide la semaine sans se cramer. <em>GSC S2 - Samedi Sortie Longue Z2 55min</em>"},
+        {day:"Dimanche",type:"renfo",icon:"fa-solid fa-dumbbell",badge:"Renforcement",detail:"15 min renfo. Gainage, squats, fentes. Essentiel pour la progression."}
+      ]},
+      {label:"S3 — Montée en puissance",dates:"16–22 juin",vol:"~45 km",volPct:74,isRace:false,
+       focus:"On intensifie : 8×400m, tempo 25 min, sortie longue 1h. Lundi footing Z2 pour lancer la semaine. Si Body Battery < 25 le matin du fractionné, réduis à 6 répétitions.",
+       days:[
+        {day:"Lundi",type:"z2",icon:"fa-solid fa-person-running",badge:"Footing Z2",detail:"<strong>35 min</strong> Z2 (5:45–6:05/km). Mise en route de la semaine. <em>GSC S3 - Lundi Footing Z2 35min</em>"},
+        {day:"Mardi",type:"frac",icon:"fa-solid fa-bolt-lightning",badge:"Fractionné 8×400m",detail:"15 min Z2 + <strong>8×400m à 4:50–5:00/km</strong> (Z4-Z5) + 90s récup trot + 10 min retour calme. <em>GSC S3 - Mardi Fractionné 8×400m</em>"},
+        {day:"Mercredi",type:"rest",icon:"fa-solid fa-bed",badge:"Repos",detail:"Repos. Étirements mollets et ischio-jambiers."},
+        {day:"Jeudi",type:"z1",icon:"fa-solid fa-person-running",badge:"Footing récup",detail:"<strong>30 min</strong> très léger. <em>GSC S3 - Jeudi Footing Récup 30min</em>"},
+        {day:"Vendredi",type:"tempo",icon:"fa-solid fa-gauge-high",badge:"Tempo 25min",detail:"15 min Z2 + <strong>25 min à 5:00–5:10/km</strong> + 10 min Z2. C'est ici que tu construis l'endurance à allure course. <em>GSC S3 - Vendredi Tempo 25min</em>"},
+        {day:"Samedi",type:"long",icon:"fa-solid fa-road",badge:"Sortie longue Z2 1h",detail:"<strong>1h</strong> Z2 (5:40–6:00/km). Cap psychologique franchi. <em>GSC S3 - Samedi Sortie Longue Z2 1h</em>"},
+        {day:"Dimanche",type:"renfo",icon:"fa-solid fa-dumbbell",badge:"Renforcement",detail:"15 min renfo + étirements. Récupération complète avant la semaine pic."}
+      ]},
+      {label:"S4 — Pic + Simulation",dates:"23–29 juin",vol:"~46 km",volPct:82,isRace:false,
+       focus:"Semaine pic. Lundi footing Z2 pour activer les jambes. Les 5×1000m mardi sont ta séance reine : tiens 4:55–5:05/km sur chaque répétition. Le tempo 30 min vendredi = quasi-simulation de la course. J-6 dimanche.",
+       days:[
+        {day:"Lundi",type:"z2",icon:"fa-solid fa-person-running",badge:"Footing Z2",detail:"<strong>30 min</strong> Z2 (5:45–6:00/km). Activation avant la grosse séance mardi. <em>GSC S4 - Lundi Footing Z2 30min</em>"},
+        {day:"Mardi",type:"frac",icon:"fa-solid fa-bolt-lightning",badge:"Fractionné 5×1000m ★",detail:"15 min Z2 + <strong>5×1000m à 4:55–5:05/km</strong> + 2min30 récup trot + 10 min retour calme. Séance la plus importante de toute la préparation. <em>GSC S4 - Mardi Fractionné 5×1000m</em>"},
+        {day:"Mercredi",type:"rest",icon:"fa-solid fa-bed",badge:"Repos",detail:"Repos sérieux. Les 1000m fatiguent plus que les 400m — récupération obligatoire."},
+        {day:"Jeudi",type:"z1",icon:"fa-solid fa-person-running",badge:"Footing récup",detail:"<strong>25 min</strong> très léger. <em>GSC S4 - Jeudi Footing Récup 25min</em>"},
+        {day:"Vendredi",type:"tempo",icon:"fa-solid fa-gauge-high",badge:"Tempo 30min ★",detail:"15 min Z2 + <strong>30 min à 4:58–5:05/km</strong> + 10 min Z2. Si tu tiens ça confortablement, les 50 min sont dans ta poche. <em>GSC S4 - Vendredi Tempo 30min</em>"},
+        {day:"Samedi",type:"long",icon:"fa-solid fa-road",badge:"Sortie longue Z2 50min",detail:"<strong>50 min</strong> Z2 (légèrement réduite vs S3). Préserve les jambes pour l'affûtage. <em>GSC S4 - Samedi Sortie Longue 50min</em>"},
+        {day:"Dimanche",type:"rest",icon:"fa-solid fa-bed",badge:"Repos J-6",detail:"Repos complet. La course est dans 6 jours. Commence à réduire les efforts."}
+      ]},
+      {label:"S5 — Affûtage & Course",dates:"30 juin–5 juil.",vol:"~18 km",volPct:33,isRace:true,
+       focus:"Semaine d'affûtage. Volume coupé drastiquement. Lundi repos pour récupérer du pic de S4. Mardi fractionné léger pour rester vif. Jeudi dernière sortie, vendredi repos total. Ventoline avant l'échauffement samedi.",
+       days:[
+        {day:"Lundi",type:"rest",icon:"fa-solid fa-bed",badge:"Repos J-5",detail:"Repos complet. Récupération de la semaine pic. Étirements doux, hydratation, sommeil prioritaire."},
+        {day:"Mardi",type:"frac",icon:"fa-solid fa-bolt-lightning",badge:"Fractionné léger 4×400m",detail:"10 min Z2 + <strong>4×400m à allure 10K</strong> + 2 min récup + 10 min Z2. Court et suffisant pour garder les jambes vives. <em>GSC S5 - Mardi Fractionné Léger 4×400m</em>"},
+        {day:"Mercredi",type:"rest",icon:"fa-solid fa-bed",badge:"Repos J-3",detail:"Repos. Prépare ton sac de course, vérifie le parcours GSC Run Set & Match."},
+        {day:"Jeudi",type:"z1",icon:"fa-solid fa-person-running",badge:"Footing léger J-2",detail:"<strong>20 min</strong> très léger Z1. Dernier footing. Pas d'effort, juste garder les jambes actives. <em>GSC S5 - Jeudi Footing Léger 20min</em>"},
+        {day:"Vendredi",type:"rest",icon:"fa-solid fa-bed",badge:"Repos J-1",detail:"<strong>Repos total.</strong> Alimentation glucidique (pâtes, riz). Coucher tôt. Prépare dossard, chaussures de course, Ventoline."},
+        {day:"Samedi",type:"race",icon:"fa-solid fa-trophy",badge:"🏁 COURSE 10KM",detail:"<strong>GSC Run Set & Match — Objectif : sous 50 min.</strong> Ventoline avant l'échauffement. Pars à <strong>5:00/km pile</strong>. Tiens les 5 premiers km à 5:02–5:05/km. Accélère sur km 8–10 si les sensations sont bonnes. <em>GSC S5 - COURSE 10KM</em>",isRace:true},
+        {day:"Dimanche",type:"rest",icon:"fa-solid fa-face-smile",badge:"Récupération",detail:"Récup active, marche 20 min. Felicitations, tu l'as fait !"}
+      ]}
+    ]
+  },
+  // ── PHASE 2 (post-10K) ──
   {
     id:"p2", label:"Phase 2", emoji:"🔨", name:"Construction",
-    duration:"8 semaines", volume:"30→48 km/sem", sessions:"4–5/sem",
-    desc:"Monter en volume, introduire le fractionné et le travail au seuil. Objectif : développer la VMA et l'endurance pour préparer un 10 km entre 48 et 50 min. Rotation de 4 types de fractionné sur un cycle de 4 semaines.",
+    duration:"8 semaines", volume:"30→48 km/sem", sessions:"4–5/sem", countdown:false,
+    desc:"À démarrer après le 10K du 5 juillet. Monter en volume, fractionné varié sur cycle de 4 semaines, travail au seuil. Objectif : préparer un semi-marathon à l'automne.",
     allures:[
       {label:"Endurance Z2",val:"5:30–5:50/km",fc:"120–140 bpm",bg:"#E1F5EE",color:"#085041"},
       {label:"Tempo Z3",val:"5:00–5:15/km",fc:"140–155 bpm",bg:"#FBEAF0",color:"#72243E"},
       {label:"Seuil Z4",val:"4:35–4:50/km",fc:"155–170 bpm",bg:"#FAECE7",color:"#712B13"},
       {label:"Fractionné Z4-Z5",val:"4:20–4:40/km",fc:"165–180 bpm",bg:"#FCEBEB",color:"#791F1F"},
     ],
-    garmin:[
-      "P2 - Fractionné 8×400m — rotation semaine A",
-      "P2 - Fractionné 6×800m — rotation semaine B",
-      "P2 - Fractionné 5×1000m — rotation semaine C",
-      "P2 - Fractionné 3×2000m — rotation semaine D",
-      "P2 - Sortie Tempo 45min — vendredi",
-      "P2 - Footing Récup 30min — jeudi",
-      "P2 - Footing Léger 25min — dimanche (optionnel)",
-      "P2 - Sortie Longue Z2 1h — samedi (S7-10)",
-      "P2 - Sortie Longue Z2 1h15 — samedi (S11-14)",
-    ],
-    weeks: (function(){
-      const fracTypes = [
-        {name:"8×400m",desc:"<strong>8×400m</strong> à 4:20–4:40/km (Z4-Z5), récup 1min30 trot. <em>P2 - Fractionné 8×400m</em>"},
-        {name:"6×800m",desc:"<strong>6×800m</strong> à 4:30–4:45/km (Z4), récup 2 min trot. <em>P2 - Fractionné 6×800m</em>"},
-        {name:"5×1000m",desc:"<strong>5×1000m</strong> à 4:35–4:50/km (Z4), récup 2min30 trot. <em>P2 - Fractionné 5×1000m</em>"},
-        {name:"3×2000m",desc:"<strong>3×2000m</strong> à 4:45–5:00/km (Z3-Z4), récup 3 min trot. <em>P2 - Fractionné 3×2000m</em>"},
+    garmin:["P2 - Fractionné 8×400m","P2 - Fractionné 6×800m","P2 - Fractionné 5×1000m","P2 - Fractionné 3×2000m","P2 - Sortie Tempo 45min","P2 - Footing Récup 30min","P2 - Sortie Longue Z2 1h","P2 - Sortie Longue Z2 1h15"],
+    weeks:(function(){
+      const fracTypes=[
+        {name:"8×400m",detail:"<strong>8×400m</strong> à 4:20–4:40/km (Z4-Z5), récup 1min30 trot. <em>P2 - Fractionné 8×400m</em>"},
+        {name:"6×800m",detail:"<strong>6×800m</strong> à 4:30–4:45/km (Z4), récup 2 min trot. <em>P2 - Fractionné 6×800m</em>"},
+        {name:"5×1000m",detail:"<strong>5×1000m</strong> à 4:35–4:50/km (Z4), récup 2min30 trot. <em>P2 - Fractionné 5×1000m</em>"},
+        {name:"3×2000m",detail:"<strong>3×2000m</strong> à 4:45–5:00/km (Z3-Z4), récup 3 min trot. <em>P2 - Fractionné 3×2000m</em>"},
       ];
-      const vols=["~30 km","~33 km","~35 km","~38 km","~40 km","~42 km","~45 km","~48 km"];
-      const pcts=[38,42,48,53,58,63,70,78];
-      const focuses=[
-        "Premier vrai fractionné ! L'échauffement de 15 min est crucial. Pas d'orgueil sur les 400m — reste régulier.",
-        "On allonge les intervalles à 800m. Le tempo du vendredi peut sembler difficile — c'est normal, tu construis.",
-        "Première semaine de 1000m. Régularité > vitesse. Tous les 1000m au même chrono.",
-        "3×2000m au seuil. C'est la séance la plus exigeante mentalement. Accroche-toi au rythme.",
-        "2ème cycle de fractionné. Tu devrais être plus à l'aise sur les 400m qu'en S7. La SL passe à 1h15.",
-        "Les 800m sont ton indicateur clé. Compare les chronos avec S8. Progression visible ici.",
-        "Les 1000m deviennent ta séance référence pour le 10 km. Cible l'allure de course 10 km.",
-        "Dernière semaine de construction. 3×2000m = simulation d'effort prolongé. Tu es prêt pour la Phase 3."
-      ];
+      const vols=["~30 km","~33 km","~36 km","~38 km","~40 km","~42 km","~45 km","~48 km"];
+      const pcts=[40,45,50,55,60,65,72,80];
       const longues=["55 min","1h","1h","1h05","1h10","1h10","1h15","1h15"];
-      const longGarmin=["","<em>P2 - Sortie Longue Z2 1h</em>","<em>P2 - Sortie Longue Z2 1h</em>","","","","<em>P2 - Sortie Longue Z2 1h15</em>","<em>P2 - Sortie Longue Z2 1h15</em>"];
-      const tempos=["20 min Z3","20 min Z3","20 min Z3","25 min Z3","25 min Z3","25 min Z3","30 min Z3","25 min Z3"];
+      const tempos=["20 min","20 min","25 min","25 min","25 min","30 min","30 min","25 min"];
+      const focuses=[
+        "Reprise post-10K. Les jambes ont de la mémoire du fractionné GSC, on capitalise.",
+        "Allongement des intervalles à 800m. Le tempo du vendredi commence à faire mal — c'est bon signe.",
+        "Les 1000m deviennent la référence. Cible l'allure de ton prochain 10K (amélioration post-GSC).",
+        "3×2000m : la séance la plus exigeante mentalement. Accroche-toi au rythme.",
+        "2ème cycle. Tu devrais être plus à l'aise sur les 400m qu'en semaine 1. SL passe à 1h10.",
+        "Les 800m = indicateur clé. Compare les chronos avec la semaine 2.",
+        "Les 1000m = référence semi-marathon. Cible l'allure de course semi.",
+        "Dernière semaine. 3×2000m = simulation prolongée. Tu es prêt pour la Phase 3 semi."
+      ];
       let ws=[];
       for(let i=0;i<8;i++){
-        const sn=i+7;
         const fi=i%4;
         ws.push({
-          label:`Semaine ${sn}`,vol:vols[i],volPct:pcts[i],focus:focuses[i],
+          label:`Semaine ${i+1}`,dates:`Sem. ${i+1} post-GSC`,vol:vols[i],volPct:pcts[i],
+          focus:focuses[i],
           days:[
-            {day:"Lundi",type:"tennis",icon:"fa-solid fa-table-tennis-paddle-ball",badge:"Tennis",detail:"20h–22h."},
-            {day:"Mardi",type:"rest",icon:"fa-solid fa-bed",badge:"Repos",detail:"Repos complet post-tennis."},
-            {day:"Mercredi",type:"frac",icon:"fa-solid fa-bolt-lightning",badge:`Fractionné ${fracTypes[fi].name}`,detail:`Échauffement 15 min Z2 + ${fracTypes[fi].desc} + retour au calme 10 min Z1.`},
-            {day:"Jeudi",type:"z1",icon:"fa-solid fa-person-running",badge:"Footing récup",detail:"<strong>30 min</strong> très souple (6:00–6:30/km). Récupération du fractionné. <em>P2 - Footing Récup 30min</em>"},
-            {day:"Vendredi",type:"tempo",icon:"fa-solid fa-gauge-high",badge:"Sortie tempo",detail:`15 min Z2 + <strong>${tempos[i]}</strong> (5:00–5:15/km) + 10 min Z2. <em>P2 - Sortie Tempo 45min</em>`},
-            {day:"Samedi",type:"long",icon:"fa-solid fa-road",badge:"Sortie longue Z2",detail:`<strong>${longues[i]}</strong> en endurance Z2 (5:30–5:50/km). ${longGarmin[i]}`},
-            {day:"Dimanche",type:"rest",icon:"fa-solid fa-bed",badge:"Repos / Option",detail:i>=4?"Option : <strong>25 min</strong> footing très léger Z1. <em>P2 - Footing Léger 25min</em>. Sinon renfo 15 min.":"Repos ou 15 min renforcement musculaire."}
+            {day:"Lundi",type:"z2",icon:"fa-solid fa-person-running",badge:"Footing Z2",detail:"<strong>30 min</strong> Z2. Début de semaine en douceur."},
+            {day:"Mardi",type:"frac",icon:"fa-solid fa-bolt-lightning",badge:`Fractionné ${fracTypes[fi].name}`,detail:`15 min Z2 + ${fracTypes[fi].detail} + retour calme 10 min.`},
+            {day:"Mercredi",type:"rest",icon:"fa-solid fa-bed",badge:"Repos",detail:"Repos post-fractionné."},
+            {day:"Jeudi",type:"z1",icon:"fa-solid fa-person-running",badge:"Footing récup",detail:"<strong>30 min</strong> très souple (6:00–6:30/km). <em>P2 - Footing Récup 30min</em>"},
+            {day:"Vendredi",type:"tempo",icon:"fa-solid fa-gauge-high",badge:"Sortie tempo",detail:`15 min Z2 + <strong>${tempos[i]} tempo</strong> (5:00–5:15/km) + 10 min Z2. <em>P2 - Sortie Tempo 45min</em>`},
+            {day:"Samedi",type:"long",icon:"fa-solid fa-road",badge:"Sortie longue Z2",detail:`<strong>${longues[i]}</strong> Z2 (5:30–5:50/km).`},
+            {day:"Dimanche",type:"rest",icon:"fa-solid fa-bed",badge:"Repos / Option",detail:i>=4?"Option : 25 min footing très léger Z1. Sinon repos + renfo.":"Repos ou 15 min renforcement."}
           ]
         });
       }
       return ws;
     })()
   },
+  // ── PHASE 3 ──
   {
     id:"p3", label:"Phase 3", emoji:"🎯", name:"Spécifique",
-    duration:"6 à 12 sem selon objectif", volume:"35→60 km/sem", sessions:"4–5/sem",
-    desc:"Préparation ciblée sur ta distance de course. Choisis ton objectif : 10 km (6 sem), semi-marathon (10 sem après le 10 km), ou marathon (12 sem après le semi). Le fractionné s'allonge, la sortie longue augmente, le travail au seuil devient prioritaire.",
+    duration:"6 à 22 sem", volume:"38→60 km/sem", sessions:"4–5/sem", countdown:false,
+    desc:"Préparation ciblée sur ta distance de course. Semi-marathon d'abord (10 sem), puis marathon (12 sem). Fractionné long, sortie longue progressive avec blocs au seuil, travail spécifique à allure course.",
     allures:[
-      {label:"Allure 10 km",val:"4:50–5:00/km",fc:"155–170 bpm",bg:"#FCEBEB",color:"#791F1F"},
       {label:"Allure semi",val:"5:10–5:25/km",fc:"145–160 bpm",bg:"#FAECE7",color:"#712B13"},
       {label:"Allure marathon",val:"5:40–5:55/km",fc:"135–150 bpm",bg:"#FAEEDA",color:"#633806"},
+      {label:"Seuil Z3-Z4",val:"4:50–5:10/km",fc:"150–168 bpm",bg:"#FCEBEB",color:"#791F1F"},
       {label:"Endurance Z2",val:"5:30–6:00/km",fc:"120–140 bpm",bg:"#E1F5EE",color:"#085041"},
     ],
-    garmin:[
-      "P3-10K - 6×1000m allure cible",
-      "P3-10K - 4×2000m allure cible",
-      "P3-10K - Tempo 30min allure cible",
-      "P3-10K - Sortie Longue 1h20",
-      "P3-Semi - 3×3000m allure seuil",
-      "P3-Semi - 2×4000m allure semi",
-      "P3-Semi - SL 1h40 + bloc seuil",
-      "P3-Semi - Sortie Longue 1h50",
-      "P3-Marathon - 2×5000m allure marathon",
-      "P3-Marathon - SL 2h + bloc allure",
-      "P3-Marathon - Sortie Longue 2h15",
-      "P3 - Footing Récup 30min",
-      "P3 - Footing Z2 40min",
-    ],
+    garmin:["P3-Semi - 3×3000m allure seuil","P3-Semi - 2×4000m allure semi","P3-Semi - SL 1h40 + bloc seuil","P3-Semi - Sortie Longue 1h50","P3-Marathon - 2×5000m allure marathon","P3-Marathon - SL 2h + bloc allure","P3-Marathon - Sortie Longue 2h15","P3 - Footing Récup 30min","P3 - Footing Z2 40min"],
     weeks:(function(){
-      let ws=[];
-      // 10K block: 6 weeks (S15-20)
-      const k10frac=[
-        "6×1000m à allure 10 km (4:50–5:00/km), récup 2 min. <em>P3-10K - 6×1000m allure cible</em>",
-        "4×2000m à allure 10 km, récup 2min30. <em>P3-10K - 4×2000m allure cible</em>",
-        "6×1000m à allure 10 km, récup 1min45 (on réduit la récup). <em>P3-10K - 6×1000m allure cible</em>",
-        "4×2000m à allure 10 km, récup 2 min. <em>P3-10K - 4×2000m allure cible</em>",
-        "5×1000m à allure 10 km, récup 1min30. Objectif régularité. <em>P3-10K - 6×1000m allure cible</em>",
-        "3×1000m allure 10 km facile. Affûtage pré-course. <em>P3-10K - 6×1000m allure cible</em>"
-      ];
-      const k10tempos=["25 min","25 min","30 min","30 min","20 min","Footing 30 min Z2"];
-      const k10longs=["1h10","1h15","1h15","1h20","1h10","45 min facile"];
-      const k10vols=["~38 km","~40 km","~42 km","~43 km","~38 km","~25 km"];
-      const k10pcts=[50,55,60,62,50,33];
-      const k10focus=[
-        "Début de la spécifique 10 km. Les 1000m sont à l'allure exacte que tu viseras en course (4:50–5:00/km).",
-        "Les 2000m : apprendre à tenir l'allure plus longtemps. C'est ici que le mental entre en jeu.",
-        "On durcit : même fractionné mais récupération plus courte. Tempo 30 min = quasi simulation 10 km.",
-        "Semaine la plus chargée du bloc 10 km. Si Body Battery < 25 le matin, convertis une séance en Z2.",
-        "Début d'affûtage. On baisse le volume mais on maintient l'intensité. Tu dois arriver frais au 10 km.",
-        "Semaine de course. Mercredi léger, vendredi footing, dimanche = COURSE 10 KM ! Objectif : 48–50 min."
-      ];
-      for(let i=0;i<6;i++){
-        const sn=i+15;
-        ws.push({
-          label:`S${sn} — 10K`,vol:k10vols[i],volPct:k10pcts[i],focus:k10focus[i],
-          days:[
-            {day:"Lundi",type:"tennis",icon:"fa-solid fa-table-tennis-paddle-ball",badge:"Tennis",detail:"20h–22h."},
-            {day:"Mardi",type:"rest",icon:"fa-solid fa-bed",badge:"Repos",detail:"Repos."},
-            {day:"Mercredi",type:"frac",icon:"fa-solid fa-bolt-lightning",badge:"Fractionné 10K",detail:`15 min Z2 + ${k10frac[i]} + retour calme 10 min.`},
-            {day:"Jeudi",type:"z1",icon:"fa-solid fa-person-running",badge:"Footing récup",detail:"<strong>30 min</strong> récup Z1-Z2. <em>P3 - Footing Récup 30min</em>"},
-            {day:"Vendredi",type:i<5?"tempo":"z2",icon:i<5?"fa-solid fa-gauge-high":"fa-solid fa-person-running",badge:i<5?"Tempo":"Footing",detail:i<5?`15 min Z2 + <strong>${k10tempos[i]} allure 10 km</strong> + 10 min Z2. <em>P3-10K - Tempo 30min allure cible</em>`:`<strong>${k10tempos[i]}</strong>. Dernière sortie avant la course.`},
-            {day:"Samedi",type:"long",icon:"fa-solid fa-road",badge:"Sortie longue",detail:`<strong>${k10longs[i]}</strong> Z2.${i===5?" Repos complet si tu cours dimanche.":""} <em>P3-10K - Sortie Longue 1h20</em>`},
-            {day:"Dimanche",type:i<5?"renfo":"frac",icon:i<5?"fa-solid fa-dumbbell":"fa-solid fa-trophy",badge:i<5?"Renforcement":"COURSE 10 KM",detail:i<5?"15 min renfo + étirements.":"<strong>Jour de course !</strong> Objectif : 48–50 min. Échauffement 10 min. Pars à 5:00/km, accélère les 2 derniers km si tu te sens bien."}
-          ]
-        });
-      }
-      // Semi block: 4 weeks shown (S21-24 representative)
       const semiFrac=[
         "3×3000m au seuil (4:50–5:10/km), récup 3 min. <em>P3-Semi - 3×3000m allure seuil</em>",
-        "2×4000m à allure semi (5:10–5:25/km), récup 3 min. <em>P3-Semi - 2×4000m allure semi</em>",
-        "3×3000m au seuil, récup 2min30 (récup réduite). <em>P3-Semi - 3×3000m allure seuil</em>",
-        "2×4000m à allure semi, récup 2min30. Simulation. <em>P3-Semi - 2×4000m allure semi</em>",
+        "2×4000m allure semi (5:10–5:25/km), récup 3 min. <em>P3-Semi - 2×4000m allure semi</em>",
+        "3×3000m au seuil, récup 2min30. <em>P3-Semi - 3×3000m allure seuil</em>",
+        "2×4000m allure semi, récup 2min30. <em>P3-Semi - 2×4000m allure semi</em>",
       ];
-      const semiLongs=["1h30","1h30 + bloc 20 min Z3","1h40","1h50"];
-      const semiLongDetail=[
+      const semiLongs=[
         "<strong>1h30</strong> Z2. <em>P3-Semi - Sortie Longue 1h50</em>",
-        "<strong>1h30</strong> dont 20 min à allure semi au milieu. <em>P3-Semi - SL 1h40 + bloc seuil</em>",
-        "<strong>1h40</strong> dont 30 min à allure semi au milieu. <em>P3-Semi - SL 1h40 + bloc seuil</em>",
-        "<strong>1h50</strong> Z2 très facile. Dernière grosse sortie. <em>P3-Semi - Sortie Longue 1h50</em>"
+        "<strong>1h30</strong> dont 20 min allure semi. <em>P3-Semi - SL 1h40 + bloc seuil</em>",
+        "<strong>1h40</strong> dont 30 min allure semi. <em>P3-Semi - SL 1h40 + bloc seuil</em>",
+        "<strong>1h50</strong> Z2. Dernière grosse sortie. <em>P3-Semi - Sortie Longue 1h50</em>"
       ];
-      const semiVols=["~42 km","~45 km","~48 km","~50 km"];
-      const semiPcts=[55,62,70,75];
-      const semiFocus=[
-        "Début du bloc semi. Les 3000m au seuil sont la séance reine du semi-marathon. L'objectif est 1h50–1h55.",
-        "Les 4000m simulent l'effort de course. La sortie longue intègre un bloc à allure semi — c'est ça l'entraînement spécifique.",
-        "Semaine chargée. La SL avec 30 min au seuil est exigeante — gère ton alimentation et hydratation comme en course.",
-        "Dernière grosse semaine. Après celle-ci, 2 semaines d'affûtage avant la course (même principe que le 10 km)."
-      ];
-      for(let i=0;i<4;i++){
-        const sn=i+21;
-        ws.push({
-          label:`S${sn} — Semi`,vol:semiVols[i],volPct:semiPcts[i],focus:semiFocus[i],
-          days:[
-            {day:"Lundi",type:"tennis",icon:"fa-solid fa-table-tennis-paddle-ball",badge:"Tennis",detail:"20h–22h."},
-            {day:"Mardi",type:"rest",icon:"fa-solid fa-bed",badge:"Repos",detail:"Repos."},
-            {day:"Mercredi",type:"frac",icon:"fa-solid fa-bolt-lightning",badge:"Fractionné Semi",detail:`15 min Z2 + ${semiFrac[i]} + retour calme 10 min.`},
-            {day:"Jeudi",type:"z1",icon:"fa-solid fa-person-running",badge:"Footing récup",detail:"<strong>30 min</strong> récup Z1-Z2. <em>P3 - Footing Récup 30min</em>"},
-            {day:"Vendredi",type:"z2",icon:"fa-solid fa-person-running",badge:"Footing Z2",detail:"<strong>40 min</strong> Z2. <em>P3 - Footing Z2 40min</em>"},
-            {day:"Samedi",type:"long",icon:"fa-solid fa-road",badge:"Sortie longue",detail:semiLongDetail[i]},
-            {day:"Dimanche",type:"rest",icon:"fa-solid fa-bed",badge:"Repos / Renfo",detail:"Repos ou 15 min renfo + étirements. Écoute la fatigue."}
-          ]
-        });
-      }
-      // Marathon block: 4 weeks shown (S31-34 representative)
       const maraFrac=[
-        "2×5000m à allure marathon (5:40–5:55/km), récup 3 min. <em>P3-Marathon - 2×5000m allure marathon</em>",
-        "3×3000m au seuil (4:50–5:10/km), récup 3 min. <em>P3-Semi - 3×3000m allure seuil</em>",
-        "2×5000m à allure marathon, récup 2min30. <em>P3-Marathon - 2×5000m allure marathon</em>",
-        "3×3000m au seuil, récup 2min30. Maintien de la VMA. <em>P3-Semi - 3×3000m allure seuil</em>",
+        "2×5000m allure marathon (5:40–5:55/km), récup 3 min. <em>P3-Marathon - 2×5000m allure marathon</em>",
+        "3×3000m au seuil (4:50–5:10/km), récup 3 min.",
+        "2×5000m allure marathon, récup 2min30.",
+        "3×3000m au seuil, récup 2min30."
       ];
       const maraLongs=[
-        "<strong>2h</strong> dont 45 min à allure marathon au milieu. <em>P3-Marathon - SL 2h + bloc allure</em>",
-        "<strong>2h15</strong> Z2 pure. Sortie de volume. <em>P3-Marathon - Sortie Longue 2h15</em>",
-        "<strong>2h</strong> dont 50 min à allure marathon. Simulation longue. <em>P3-Marathon - SL 2h + bloc allure</em>",
-        "<strong>2h15</strong> Z2. Dernière grosse sortie avant affûtage. <em>P3-Marathon - Sortie Longue 2h15</em>"
+        "<strong>2h</strong> dont 45 min allure marathon. <em>P3-Marathon - SL 2h + bloc allure</em>",
+        "<strong>2h15</strong> Z2 pure. <em>P3-Marathon - Sortie Longue 2h15</em>",
+        "<strong>2h</strong> dont 50 min allure marathon. <em>P3-Marathon - SL 2h + bloc allure</em>",
+        "<strong>2h15</strong> Z2. Dernière grosse sortie avant affûtage."
       ];
-      const maraVols=["~52 km","~55 km","~58 km","~55 km"];
-      const maraPcts=[68,75,82,75];
-      const maraFocus=[
-        "Bloc marathon. Les 5000m à allure marathon apprennent au corps à tenir 5:45/km pendant longtemps. Objectif : 4h00–4h10.",
-        "Fractionné au seuil pour maintenir la VMA. La SL de 2h15 est un cap mental autant que physique — alimentation en course indispensable.",
-        "Semaine la plus dure. La SL de 2h avec 50 min à allure marathon est quasi une simulation. Teste ta nutrition de course.",
-        "Dernière semaine chargée. Après : 3 semaines d'affûtage progressif. Tu y es presque !"
-      ];
-      for(let i=0;i<4;i++){
-        const sn=i+31;
+      let ws=[];
+      ["Semi","Semi","Semi","Semi"].forEach((t,i)=>{
         ws.push({
-          label:`S${sn} — Marathon`,vol:maraVols[i],volPct:maraPcts[i],focus:maraFocus[i],
+          label:`S${i+1} — Semi`,dates:`Bloc semi S${i+1}`,vol:["~42 km","~45 km","~48 km","~50 km"][i],volPct:[55,62,70,75][i],
+          focus:["Bloc semi. Les 3×3000m au seuil sont la séance reine. Objectif : 1h50–1h55.","Les 4×km simulent l'effort. SL avec bloc allure semi = entraînement spécifique.","Semaine chargée. Gère alimentation et hydratation comme en course.","Dernière grosse semaine. 2 semaines d'affûtage ensuite."][i],
           days:[
-            {day:"Lundi",type:"tennis",icon:"fa-solid fa-table-tennis-paddle-ball",badge:"Tennis",detail:"20h–22h."},
-            {day:"Mardi",type:"rest",icon:"fa-solid fa-bed",badge:"Repos",detail:"Repos."},
-            {day:"Mercredi",type:"frac",icon:"fa-solid fa-bolt-lightning",badge:"Fractionné Marathon",detail:`15 min Z2 + ${maraFrac[i]} + retour calme 10 min.`},
-            {day:"Jeudi",type:"z1",icon:"fa-solid fa-person-running",badge:"Footing récup",detail:"<strong>30 min</strong> récup Z1-Z2. <em>P3 - Footing Récup 30min</em>"},
-            {day:"Vendredi",type:"z2",icon:"fa-solid fa-person-running",badge:"Footing Z2",detail:"<strong>40–45 min</strong> Z2. <em>P3 - Footing Z2 40min</em>"},
-            {day:"Samedi",type:"long",icon:"fa-solid fa-road",badge:"Sortie longue",detail:maraLongs[i]},
-            {day:"Dimanche",type:"rest",icon:"fa-solid fa-bed",badge:"Repos",detail:"Repos complet. Récupération, hydratation, alimentation. La SL de la veille nécessite un vrai repos."}
+            {day:"Lundi",type:"z2",icon:"fa-solid fa-person-running",badge:"Footing Z2",detail:"<strong>30 min</strong> Z2."},
+            {day:"Mardi",type:"frac",icon:"fa-solid fa-bolt-lightning",badge:"Fractionné Semi",detail:`15 min Z2 + ${semiFrac[i]} + retour calme 10 min.`},
+            {day:"Mercredi",type:"rest",icon:"fa-solid fa-bed",badge:"Repos",detail:"Repos."},
+            {day:"Jeudi",type:"z1",icon:"fa-solid fa-person-running",badge:"Footing récup",detail:"<strong>30 min</strong> récup. <em>P3 - Footing Récup 30min</em>"},
+            {day:"Vendredi",type:"z2",icon:"fa-solid fa-person-running",badge:"Footing Z2",detail:"<strong>40 min</strong> Z2. <em>P3 - Footing Z2 40min</em>"},
+            {day:"Samedi",type:"long",icon:"fa-solid fa-road",badge:"Sortie longue",detail:semiLongs[i]},
+            {day:"Dimanche",type:"rest",icon:"fa-solid fa-bed",badge:"Repos / Renfo",detail:"Repos ou 15 min renfo."}
           ]
         });
-      }
+      });
+      ["Marathon","Marathon","Marathon","Marathon"].forEach((t,i)=>{
+        ws.push({
+          label:`S${i+1} — Marathon`,dates:`Bloc marathon S${i+1}`,vol:["~52 km","~55 km","~58 km","~55 km"][i],volPct:[68,75,82,75][i],
+          focus:["Bloc marathon. Les 5000m allure marathon apprennent au corps à tenir 5:45/km. Objectif : 4h00–4h10.","Fractionné seuil pour maintenir la VMA. SL 2h15 = cap mental. Alimentation en course indispensable.","Semaine la plus dure. SL 2h avec 50 min allure marathon = simulation. Teste ta nutrition de course.","Dernière semaine chargée. 3 semaines d'affûtage ensuite."][i],
+          days:[
+            {day:"Lundi",type:"z2",icon:"fa-solid fa-person-running",badge:"Footing Z2",detail:"<strong>30 min</strong> Z2."},
+            {day:"Mardi",type:"frac",icon:"fa-solid fa-bolt-lightning",badge:"Fractionné Marathon",detail:`15 min Z2 + ${maraFrac[i]} + retour calme 10 min.`},
+            {day:"Mercredi",type:"rest",icon:"fa-solid fa-bed",badge:"Repos",detail:"Repos."},
+            {day:"Jeudi",type:"z1",icon:"fa-solid fa-person-running",badge:"Footing récup",detail:"<strong>30 min</strong> récup. <em>P3 - Footing Récup 30min</em>"},
+            {day:"Vendredi",type:"z2",icon:"fa-solid fa-person-running",badge:"Footing Z2",detail:"<strong>40–45 min</strong> Z2. <em>P3 - Footing Z2 40min</em>"},
+            {day:"Samedi",type:"long",icon:"fa-solid fa-road",badge:"Sortie longue",detail:maraLongs[i]},
+            {day:"Dimanche",type:"rest",icon:"fa-solid fa-bed",badge:"Repos",detail:"Repos complet."}
+          ]
+        });
+      });
       return ws;
     })()
   }
@@ -390,25 +373,37 @@ const PHASES = [
 
 let currentPhase=0, currentWeek=0;
 
+function getDaysToRace(){
+  const race=new Date('2026-07-05');
+  const today=new Date();
+  today.setHours(0,0,0,0);
+  race.setHours(0,0,0,0);
+  return Math.round((race-today)/(1000*60*60*24));
+}
+
+function renderCountdown(){
+  const el=document.getElementById('countdown');
+  if(!PHASES[currentPhase].countdown){el.innerHTML='';return;}
+  const d=getDaysToRace();
+  const msg=d>0?`avant le départ`:d===0?`C'est aujourd'hui !`:`Course passée — bien joué !`;
+  el.innerHTML=`<div class="countdown">
+    <div><div class="countdown-num">${Math.abs(d)}</div></div>
+    <div><div style="font-size:18px;font-weight:700">jours</div>
+    <div class="countdown-label">${msg}</div>
+    <div class="countdown-sub">GSC Run Set & Match — 5 juillet 2026</div></div>
+  </div>`;
+}
+
 function renderPhaseInfo(pi){
   const p=PHASES[pi];
   let ah='';
-  p.allures.forEach(a=>{
-    ah+=`<div class="allure-card" style="background:${a.bg}">
-      <div class="allure-label" style="color:${a.color}">${a.label}</div>
-      <div class="allure-val" style="color:${a.color}">${a.val}</div>
-      <div class="allure-fc" style="color:${a.color}">${a.fc}</div>
-    </div>`;
-  });
-  document.getElementById('phaseInfo').innerHTML=`
-    <div class="phase-info">
-      <div class="phase-title">${p.emoji} ${p.name}</div>
-      <div class="phase-meta">
-        <span>${p.duration}</span><span>${p.volume}</span><span>${p.sessions}</span>
-      </div>
-      <div class="phase-desc">${p.desc}</div>
-      <div class="allure-grid">${ah}</div>
-    </div>`;
+  p.allures.forEach(a=>{ah+=`<div class="allure-card" style="background:${a.bg}"><div class="allure-label" style="color:${a.color}">${a.label}</div><div class="allure-val" style="color:${a.color}">${a.val}</div><div class="allure-fc" style="color:${a.color}">${a.fc}</div></div>`;});
+  document.getElementById('phaseInfo').innerHTML=`<div class="phase-info">
+    <div class="phase-title">${p.emoji} ${p.name}</div>
+    <div class="phase-meta"><span>${p.duration}</span><span>${p.volume}</span><span>${p.sessions}</span></div>
+    <div class="phase-desc">${p.desc}</div>
+    <div class="allure-grid">${ah}</div>
+  </div>`;
 }
 
 function renderWeekNav(pi){
@@ -416,9 +411,10 @@ function renderWeekNav(pi){
   nav.innerHTML='';
   PHASES[pi].weeks.forEach((w,i)=>{
     const b=document.createElement('button');
-    b.className='week-btn'+(i===currentWeek?' active':'');
-    b.textContent=w.label.replace('Semaine ','S');
-    b.onclick=()=>{currentWeek=i;renderWeek(pi,i);document.querySelectorAll('.week-btn').forEach((bb,j)=>bb.classList.toggle('active',j===i));};
+    const isRace=w.isRace||false;
+    b.className='week-btn'+(isRace?' race-week':'')+(i===currentWeek?' active':'');
+    b.textContent=w.label.length>8?w.label.replace('Semaine ','S'):w.label;
+    b.onclick=()=>{currentWeek=i;document.querySelectorAll('.week-btn').forEach((bb,j)=>bb.classList.toggle('active',j===i));renderWeek(pi,i);};
     nav.appendChild(b);
   });
 }
@@ -426,16 +422,18 @@ function renderWeekNav(pi){
 function renderWeek(pi,wi){
   const p=PHASES[pi];
   const w=p.weeks[wi];
-  const vc=pi===0?'vol-p1':pi===1?'vol-p2':'vol-p3';
+  const vcMap={p1:'vol-p1',gsc:'vol-pgsc',p2:'vol-p2',p3:'vol-p2'};
+  const vc=vcMap[p.id]||'vol-p1';
   let h=`<div class="week-header">
     <span class="week-title">${w.label}</span>
     <span class="week-vol">${w.vol}</span>
+    ${w.dates?`<span class="week-dates">${w.dates}</span>`:''}
   </div>
   <div class="vol-track"><div class="vol-fill ${vc}" style="width:${w.volPct}%"></div></div>
-  <div class="focus-box">${w.focus}</div>
+  <div class="focus-box ${w.isRace?'race':''}">${w.focus}</div>
   <div class="section-label">Planning</div>`;
   w.days.forEach(d=>{
-    h+=`<div class="day-card i-${d.type}">
+    h+=`<div class="day-card${d.isRace?' race-day':''} i-${d.type}">
       <div class="day-head">
         <div class="day-icon"><i class="${d.icon}"></i></div>
         <span class="day-name">${d.day}</span>
@@ -449,31 +447,28 @@ function renderWeek(pi,wi){
 
 function renderGarmin(pi){
   const p=PHASES[pi];
-  let items=p.garmin.map(g=>`<li><span class="workout-name">${g.split(' — ')[0]}</span> — ${g.split(' — ')[1]||''}</li>`).join('');
-  document.getElementById('garminSection').innerHTML=`
-    <div class="garmin-section">
-      <div class="garmin-title"><i class="fa-solid fa-clock-rotate-left"></i> Séances Garmin — ${p.name}</div>
-      <ul class="garmin-list">${items}</ul>
-    </div>`;
+  const items=p.garmin.map(g=>`<li><span class="workout-name">${g}</span></li>`).join('');
+  document.getElementById('garminSection').innerHTML=`<div class="garmin-section">
+    <div class="garmin-title"><i class="fa-solid fa-clock-rotate-left"></i> Séances Garmin — ${p.name}</div>
+    <ul class="garmin-list">${items}</ul>
+  </div>`;
 }
 
 function switchPhase(pi){
-  currentPhase=pi;currentWeek=0;
+  currentPhase=pi; currentWeek=0;
   document.querySelectorAll('.phase-tab').forEach((t,i)=>t.classList.toggle('active',i===pi));
-  renderPhaseInfo(pi);renderWeekNav(pi);renderWeek(pi,0);renderGarmin(pi);
+  renderPhaseInfo(pi); renderCountdown(); renderWeekNav(pi); renderWeek(pi,0); renderGarmin(pi);
 }
 
-// Init tabs
 const tabs=document.getElementById('phaseTabs');
 PHASES.forEach((p,i)=>{
   const t=document.createElement('button');
   t.className='phase-tab';
-  t.innerHTML=`<span class="tab-emoji">${p.emoji}</span>${p.label} · ${p.name}`;
+  t.innerHTML=`<span class="tab-emoji">${p.emoji}</span>${p.label}`;
   t.onclick=()=>switchPhase(i);
   tabs.appendChild(t);
 });
 switchPhase(0);
 </script>
-</div>
 </body>
 </html>
