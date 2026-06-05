@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Plan d'entraînement running - Objectif 10km sous 50 min</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f0f4f8;
+            color: #1e293b;
+            padding: 1rem;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            color: white;
+            padding: 1.8rem 1.5rem;
+            border-radius: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .race-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            font-size: 1rem;
+            background: rgba(255,255,255,0.15);
+            padding: 0.8rem 1.2rem;
+            border-radius: 2rem;
+        }
+
+        .countdown {
+            font-weight: 700;
+            background: #f97316;
+            padding: 0.2rem 0.8rem;
+            border-radius: 2rem;
+            display: inline-block;
+        }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #cbd5e1;
+            padding-bottom: 0.5rem;
+        }
+
+        .tab-btn {
+            background: #e2e8f0;
+            border: none;
+            padding: 0.7rem 1.4rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 2rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: #1e293b;
+        }
+
+        .tab-btn.active {
+            background: #1e3a8a;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fade 0.2s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fade {
+            from { opacity: 0; transform: translateY(5px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+
+        /* Cards / semaines */
+        .week-card {
+            background: white;
+            border-radius: 1.5rem;
+            margin-bottom: 1.8rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            overflow: hidden;
+            transition: all 0.2s;
+        }
+
+        .week-header {
+            background: #f8fafc;
+            padding: 1rem 1.5rem;
+            border-left: 8px solid #3b82f6;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+        }
+
+        .week-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .week-goal {
+            font-size: 0.85rem;
+            color: #475569;
+            background: #eef2ff;
+            padding: 0.2rem 0.8rem;
+            border-radius: 2rem;
+        }
+
+        .day-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+            padding: 1.5rem;
+        }
+
+        .day-card {
+            background: #ffffff;
+            border-radius: 1.2rem;
+            border: 1px solid #e2e8f0;
+            padding: 1rem;
+            transition: 0.1s;
+        }
+
+        .day-name {
+            font-weight: 800;
+            font-size: 1.1rem;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 2px dotted #cbd5e1;
+            padding-bottom: 0.4rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .session-title {
+            font-weight: 700;
+            color: #0f172a;
+            margin: 0.5rem 0 0.3rem;
+        }
+
+        .session-detail {
+            font-size: 0.85rem;
+            color: #334155;
+            margin-bottom: 0.4rem;
+        }
+
+        .pace-zone {
+            background: #eff6ff;
+            border-radius: 1rem;
+            padding: 0.3rem 0.6rem;
+            font-family: monospace;
+            font-size: 0.75rem;
+            display: inline-block;
+            margin-top: 0.4rem;
+        }
+
+        .warning {
+            background: #fff3e3;
+            border-left: 5px solid #f97316;
+            padding: 0.8rem;
+            border-radius: 1rem;
+            margin-bottom: 1.2rem;
+            font-size: 0.9rem;
+        }
+
+        .injury-card {
+            background: #fef2f2;
+            border-left: 5px solid #dc2626;
+            margin: 1rem 1.5rem 1rem 1.5rem;
+            padding: 0.8rem 1rem;
+            border-radius: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: #475569;
+            border-top: 1px solid #cbd5e1;
+            padding-top: 1.5rem;
+        }
+
+        @media (max-width: 700px) {
+            .day-grid {
+                grid-template-columns: 1fr;
+            }
+            .tab-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>🏃‍♂️ Programme Running – Objectif <strong>10 km GSC Run Set & Match</strong></h1>
+        <div class="race-info">
+            <span>📅 5 juillet 2026 – Paris</span>
+            <span>🎯 Objectif : <strong>49'50'' (4:59/km)</strong> – Sous 50min ⚡</span>
+            <span class="countdown" id="countdown">J-XX</span>
+        </div>
+        <div class="race-info" style="margin-top: 8px; background: rgba(0,0,0,0.2);">
+            🧠 Plan hybride accéléré (5 semaines spécifiques) | 💪 Puissance Garmin intégrée | 🚫 Tennis en pause
+        </div>
+    </div>
+
+    <!-- Onglets phases -->
+    <div class="tabs">
+        <button class="tab-btn active" data-tab="phase1">Phase 1 – Reprise (base)</button>
+        <button class="tab-btn" data-tab="phase2">Phase 2 – Construction</button>
+        <button class="tab-btn" data-tab="gsc">🎯 GSC 10km (5 semaines)</button>
+        <button class="tab-btn" data-tab="injury">⚠️ Gestion tendon (Achille)</button>
+    </div>
+
+    <!-- ========= PHASE 1 ========= -->
+    <div id="phase1" class="tab-content active">
+        <div class="warning">
+            📌 Phase 1 réalisée (semaines 1 à 6) – footings aérobie Z2 & accélérations douces. Tennis initialement inclus, retiré par la suite. 
+            Tu as terminé cette base avec progression FC. Voici le rappel structuré.
+        </div>
+        <div class="week-card">
+            <div class="week-header"><span class="week-title">Semaines 1 à 3 – Fondamentale</span><span class="week-goal">Volume ~15-20 km</span></div>
+            <div class="day-grid">
+                <div class="day-card"><div class="day-name">Lundi</div><div class="session-title">Footing Z2 25 min</div><div class="session-detail">Allure 5:50-6:10/km | FC 120-140 | Puissance ~330-360W</div></div>
+                <div class="day-card"><div class="day-name">Mardi</div><div class="session-title">Repos / marche</div><div class="session-detail">Récupération active légère</div></div>
+                <div class="day-card"><div class="day-name">Mercredi</div><div class="session-title">Footing Z2 25-30 min</div><div class="session-detail">Même endurance</div></div>
+                <div class="day-card"><div class="day-name">Jeudi</div><div class="session-title">Repos ou marche</div><div class="session-detail"></div></div>
+                <div class="day-card"><div class="day-name">Vendredi</div><div class="session-title">Footing Z2 30 min</div><div class="session-detail"></div></div>
+                <div class="day-card"><div class="day-name">Samedi</div><div class="session-title">Sortie longue Z2 35-40 min</div><div class="session-detail">Allure très cool (6:00-6:20)</div></div>
+                <div class="day-card"><div class="day-name">Dimanche</div><div class="session-title">Repos + renfo léger</div><div class="session-detail">Gainage, squats, mollets</div></div>
+            </div>
+        </div>
+        <div class="week-card">
+            <div class="week-header"><span class="week-title">Semaines 4 à 6 – Transition + accélérations</span><span class="week-goal">Sorties plus longues</span></div>
+            <div class="day-grid">
+                <div class="day-card"><div class="day-name">Lundi</div><div class="session-title">Footing Z2 30 min + 5x20" accélérations</div><div class="session-detail">Accélérations progressives, récup trot</div></div>
+                <div class="day-card"><div class="day-name">Mercredi</div><div class="session-title">Footing Z2 35 min</div></div>
+                <div class="day-card"><div class="day-name">Vendredi</div><div class="session-title">Footing Z2 35-40 min</div></div>
+                <div class="day-card"><div class="day-name">Samedi</div><div class="session-title">Sortie longue Z2 50-55 min</div><div class="session-detail">Endurance fondamentale, rythme très facile</div></div>
+                <div class="day-card"><div class="day-name">Jours libres</div><div class="session-title">Repos ou footing récup 25 min</div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========= PHASE 2 ========= -->
+    <div id="phase2" class="tab-content">
+        <div class="warning">
+            🔥 Phase de construction classique (8 semaines) – fractionné & tempo. Tu l’as entamée avec séance 6x400m.  
+            Intègre progressivement les zones de puissance Garmin : <strong>Z2=341-385W, Z4=427-490W</strong>.
+        </div>
+        <div class="week-card">
+            <div class="week-header"><span class="week-title">Semaine type construction</span><span class="week-goal">Volume 35-45 km</span></div>
+            <div class="day-grid">
+                <div class="day-card"><div class="day-name">Lundi</div><div class="session-title">🏁 Fractionné (rotation)</div><div class="session-detail">8x400m / 6x800m / 5x1000m / 3x2000m<br>Allure cible 4:30-4:50/km | Puissance 430-480W</div></div>
+                <div class="day-card"><div class="day-name">Mardi</div><div class="session-title">Repos / récup actif</div></div>
+                <div class="day-card"><div class="day-name">Mercredi</div><div class="session-title">Footing récup 30' Z1-Z2</div></div>
+                <div class="day-card"><div class="day-name">Jeudi</div><div class="session-title">Tempo / Seuil</div><div class="session-detail">15' échauff + 20' à 4:55-5:10/km (Z3-Z4) + retour calme</div></div>
+                <div class="day-card"><div class="day-name">Vendredi</div><div class="session-title">Footing Z2 35'</div></div>
+                <div class="day-card"><div class="day-name">Samedi</div><div class="session-title">Sortie longue Z2 1h à 1h15</div><div class="session-detail">Allure 5:45-6:00/km, progression douce</div></div>
+                <div class="day-card"><div class="day-name">Dimanche</div><div class="session-title">Repos ou footing 25' léger</div></div>
+            </div>
+        </div>
+        <div class="week-card">
+            <div class="week-header"><span class="week-title">📊 Zones Puissance Garmin (Running Power)</span></div>
+            <div class="day-grid">
+                <div class="day-card"><div class="day-name">Zone 2 (endurance)</div><div class="session-detail">341 – 385 Watts → footing 5:50-6:10/km, FC 120-140</div></div>
+                <div class="day-card"><div class="day-name">Zone 4 (seuil)</div><div class="session-detail">427 – 490 Watts → allure 4:37-5:00/km, tempo / fractionné long</div></div>
+                <div class="day-card"><div class="day-name">Zone 5 / sprint</div><div class="session-detail">>490W → intervalles 400m, puissance max observée ~616W</div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========= PLAN GSC 10km (5 semaines accéléré) ========= -->
+    <div id="gsc" class="tab-content">
+        <div class="warning">
+            ⏱️ <strong>Plan spécifique GSC – 5 juillet</strong> (plus de tennis, reprise de confiance). Semaines compressées avec fractionné, tempo et affûtage.  
+            ✅ Respecte les récupérations actives, utilise les workouts Garmin en cible puissance/allure.  
+            ⚠️ <strong>Attention à la douleur au mollet :</strong> applique le protocole Alfredson (voir onglet gestion tendon) et adapte si douleur >3/10.
+        </div>
+
+        <!-- Semaine 1 (2-8 juin) -->
+        <div class="week-card">
+            <div class="week-header"><span class="week-title">📆 S1 – 2 au 8 juin : Transition & fartlek</span><span class="week-goal">Découverte de l’intensité</span></div>
+            <div class="day-grid">
+                <div class="day-card"><div class="day-name">Lundi</div><div class="session-title">Fartlek 30'</div><div class="session-detail">10' Z2 + 6x (1' rapide ~4:45-5:00/km, 2' récup) + 10' retour calme</div></div>
+                <div class="day-card"><div class="day-name">Mardi</div><div class="session-title">Repos / récup</div><div class="session-detail">Marche ou étirements doux</div></div>
+                <div class="day-card"><div class="day-name">Mercredi</div><div class="session-title">Footing Z2 30' + accélérations</div><div class="session-detail">6x20" progressives, récup trot</div></div>
+                <div class="day-card"><div class="day-name">Jeudi</div><div class="session-title">Repos</div></div>
+                <div class="day-card"><div class="day-name">Vendredi</div><div class="session-title">Footing Z2 35'</div><div class="session-detail">Allure 5:50-6:00/km, puissance ~350W</div></div>
+                <div class="day-card"><div class="day-name">Samedi</div><div class="session-title">Sortie longue 55' Z2</div><div class="session-detail">Endurance fondamentale, dialogue possible</div></div>
+                <div class="day-card"><div class="day-name">Dimanche</div><div class="session-title">Repos + renforcement</div><div class="session-detail">Gainage, mollets (sans douleur)</div></div>
+            </div>
+        </div>
+
+        <!-- Semaine 2 -->
+        <div class="week-card">
+            <div class="week-header"><span class="week-title">📆 S2 – 9 au 15 juin : Premier fractionné net</span><span class="week-goal">6x400m @ allure cible 10km</span></div>
+            <div class="day-grid">
+                <div class="day-card"><div class="day-name">Lundi</div><div class="session-title">Fractionné 6x400m</div><div class="session-detail">Échauff 15' puis 6x400m à 4:50-4:55/km (puissance 440-470W), récup 1'30 trot actif</div></div>
+                <div class="day-card"><div class="day-name">Mardi</div><div class="session-title">Repos / vélo léger</div></div>
+                <div class="day-card"><div class="day-name">Mercredi</div><div class="session-title">Footing récup 30' Z1</div><div class="session-detail">Très cool, max FC 125</div></div>
+                <div class="day-card"><div class="day-name">Jeudi</div><div class="session-title">Tempo 25'</div><div class="session-detail">15' échauff + 20' à 5:05/km (Z3) + 10' retour</div></div>
+                <div class="day-card"><div class="day-name">Vendredi</div><div class="session-title">Footing Z2 30'</div></div>
+                <div class="day-card"><div class="day-name">Samedi</div><div class="session-title">Sortie longue 50'</div><div class="session-detail">Parcours plat, allure 5:45-6:00</div></div>
+                <div class="day-card"><div class="day-name">Dimanche</div><div class="session-title">Repos</div></div>
+            </div>
+        </div>
+
+        <!-- Semaine 3 -->
+        <div class="week-card">
+            <div class="week-header"><span class="week-title">📆 S3 – 16 au 22 juin : Montée en puissance</span><span class="week-goal">8x400m + tempo long</span></div>
+            <div class="day-grid">
+                <div class="day-card"><div class="day-name">Lundi</div><div class="session-title">Footing Z2 35' actif</div><div class="session-detail">Éveil musculaire</div></div>
+                <div class="day-card"><div class="day-name">Mardi</div><div class="session-title">8x400m (R=1'30)</div><div class="session-detail">Allure 4:45-4:50/km, puissance cible 450-485W</div></div>
+                <div class="day-card"><div class="day-name">Mercredi</div><div class="session-title">Récup 25' Z1</div></div>
+                <div class="day-card"><div class="day-name">Jeudi</div><div class="session-title">Tempo progressif 25'</div><div class="session-detail">15' échauff, 25' à 5:00-5:05, retour</div></div>
+                <div class="day-card"><div class="day-name">Vendredi</div><div class="session-title">Footing Z2 30'</div></div>
+                <div class="day-card"><div class="day-name">Samedi</div><div class="session-title">Sortie longue 1h</div><div class="session-detail">Derniers 20 min à allure tempo libre (5:15/km max)</div></div>
+                <div class="day-card"><div class="day-name">Dimanche</div><div class="session-title">Repos actif + étirements</div></div>
+            </div>
+        </div>
+
+        <!-- Semaine 4 : pic -->
+        <div class="week-card">
+            <div class="week-header"><span class="week-title">📆 S4 – 23 au 29 juin : Pic de charge</span><span class="week-goal">5x1000m seuil + tempo 30'</span></div>
+            <div class="day-grid">
+                <div class="day-card"><div class="day-name">Lundi</div><div class="session-title">Footing Z2 30' + drills</div><div class="session-detail">Talons-fesses, montées de genoux</div></div>
+                <div class="day-card"><div class="day-name">Mardi</div><div class="session-title">5x1000m (R=2' trot)</div><div class="session-detail">Allure 4:55-5:00/km (seuil haut), puissance 430-465W</div></div>
+                <div class="day-card"><div class="day-name">Mercredi</div><div class="session-title">Repos complet</div></div>
+                <div class="day-card"><div class="day-name">Jeudi</div><div class="session-title">Tempo 30' allure 10km</div><div class="session-detail">20' à 4:58/km, simulation mentale</div></div>
+                <div class="day-card"><div class="day-name">Vendredi</div><div class="session-title">Footing Z2 25'</div></div>
+                <div class="day-card"><div class="day-name">Samedi</div><div class="session-title">Sortie longue 1h10</div><div class="session-detail">Bloc 30' à allure marathon (5:40) + fin cool</div></div>
+                <div class="day-card"><div class="day-name">Dimanche</div><div class="session-title">Repos + check tendon</div></div>
+            </div>
+        </div>
+
+        <!-- Semaine 5 : affûtage + course -->
+        <div class="week-card">
+            <div class="week-header"><span class="week-title">📆 S5 – 30 juin au 5 juillet : Affûtage & course</span><span class="week-goal">Repos relatif, confiance</span></div>
+            <div class="day-grid">
+                <div class="day-card"><div class="day-name">Lundi</div><div class="session-title">Repos complet</div></div>
+                <div class="day-card"><div class="day-name">Mardi</div><div class="session-title">3x800m léger</div><div class="session-detail">Allure 5:00-5:10, récup 2', ne pas forcer</div></div>
+                <div class="day-card"><div class="day-name">Mercredi</div><div class="session-title">Footing Z2 20' + 3 accélérations</div></div>
+                <div class="day-card"><div class="day-name">Jeudi</div><div class="session-title">Repos (étirements, massage mollet)</div></div>
+                <div class="day-card"><div class="day-name">Vendredi</div><div class="session-title">Footing 20' très cool + 2 brisures</div><div class="session-detail">Stratégie course mentale</div></div>
+                <div class="day-card"><div class="day-name">Samedi 5 juillet</div><div class="session-title">🏁 10km GSC Run Set & Match</div><div class="session-detail"><strong>Objectif : 4:58-5:00/km</strong> – Départ calme, négative split, reste sous 50min ! 🔥<br>Utilise ta montre : puissance cible ~440-470W, FC max < 175</div></div>
+                <div class="day-card"><div class="day-name">Dimanche</div><div class="session-title">Récupération active</div><div class="session-detail">Marche, étirements, pas de course</div></div>
+            </div>
+        </div>
+        <div class="warning" style="background: #dcfce7; border-left-color: #22c55e;">
+            🏆 Stratégie de course : pars à 5:00/km strict, même si tu te sens bien. Accélère progressivement sur les 3 derniers km. Bois avant la course, ventoline 30 min avant. C’est jouable sous 50min avec cette préparation.
+        </div>
+    </div>
+
+    <!-- ========= GESTION TENDON ACHILLE ========= -->
+    <div id="injury" class="tab-content">
+        <div class="week-card">
+            <div class="week-header"><span class="week-title">🧬 Tendinopathie achilléenne (bas du mollet gauche)</span><span class="week-goal">Protocole actif – priorité récupération</span></div>
+            <div class="day-grid" style="grid-template-columns:1fr 1fr;">
+                <div class="day-card">
+                    <div class="day-name">🔍 Diagnostic & conseils</div>
+                    <div class="session-detail">Douleur dans le prolongement du tendon, calmée par massage. Survenue après augmentation rapide de l’intensité (fractionné + sortie longue rapide). <br> <strong>À faire :</strong> Glace 15' post-course, massage transverse, éviter les pointes de vitesse tant que douleur >3/10.</div>
+                </div>
+                <div class="day-card">
+                    <div class="day-name">🏋️ Protocole excentrique (Alfredson)</div>
+                    <div class="session-detail"><strong>2x par jour, tous les jours</strong><br>
+                    - Sur une marche, talons dans le vide.<br>
+                    - Monter sur 2 pieds, puis <strong>descente lente (3-4 secondes) sur jambe gauche uniquement</strong>.<br>
+                    - 3 séries de 15 répétitions genou tendu + 3 séries genou fléchi.<br>
+                    - Légère douleur autorisée ≤4/10. Si douleur aiguë réduire amplitude.
+                    </div>
+                </div>
+                <div class="day-card">
+                    <div class="day-name">📅 Adaptation entraînement (J-29)</div>
+                    <div class="session-detail">✅ Footing Z2 possible si douleur <2/10 pendant l’effort.<br>❌ Fractionné intense interdit tant que douleur au repos >1/10.<br>⚠️ Sortie longue modérée, surveiller la raideur matinale.<br>📈 Consulte un kiné si aucune amélioration sous 7 jours.</div>
+                </div>
+                <div class="day-card">
+                    <div class="day-name">💡 Rappel zones de tolérance</div>
+                    <div class="session-detail">Utilise la montre Garmin pour modérer l’allure. Privilégie la puissance : reste sous 380W pour les footings. Après 5-7 jours d’excentriques, réintroduire dégressivement les accélérations. L’objectif 10km reste accessible si tu soignes bien cette semaine.</div>
+                </div>
+            </div>
+        </div>
+        <div class="injury-card">
+            📋 <strong>Conduite à tenir cette semaine (repos actif) :</strong><br>
+            - LUNDI-MARDI : Excentriques + glace. Pas de course si douleur >3/10.<br>
+            - MERCREDI : Test footing 20 min en Z2, si OK → continuer protocole.<br>
+            - VENDREDI : Évaluation. Si mieux → fraction léger (400m réduit).<br>
+            - Le tendon réagit bien aux excentriques – ne pas sauter les séances.
+        </div>
+    </div>
+
+    <footer>
+        📲 Coach running – Suivi personnalisé Garmin Forerunner 255. Plan hybride basé sur ta VO2max 54, seuil 4:37/km et puissance Garmin.
+        Adapte les séances selon ta Body Battery et les signaux de douleur. Bon courage pour le 10km du 5 juillet ! 🏅
+    </footer>
+</div>
+
+<script>
+    // Tab switching
+    const tabs = document.querySelectorAll('.tab-btn');
+    const contents = document.querySelectorAll('.tab-content');
+    tabs.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const tabId = btn.getAttribute('data-tab');
+            tabs.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            contents.forEach(content => content.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+        });
+    });
+
+    // Countdown to July 5, 2026
+    function updateCountdown() {
+        const raceDay = new Date(2026, 6, 5); // 5 juillet 2026
+        const now = new Date();
+        const diff = raceDay - now;
+        if (diff <= 0) {
+            document.getElementById('countdown').innerHTML = "🏁 C'est le jour J !";
+            return;
+        }
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (86400000)) / 3600000);
+        document.getElementById('countdown').innerHTML = `J-${days} · ${hours}h`;
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 3600000);
+</script>
+</body>
+</html>
